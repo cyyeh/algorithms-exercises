@@ -11,23 +11,22 @@
 */
 
 function bubbleSort(nums) {
-  const _nums = Array.from(nums)
-  let lastCompareIdx = _nums.length - 1
+  let lastCompareIdx = nums.length - 1
 
   for (let i = lastCompareIdx; i >= 0; i--) {
-    let lastNum = _nums[0]
+    let lastNum = nums[0]
     for (let j = 1; j < lastCompareIdx + 1; j++) {
-      if (lastNum > _nums[j]) {
-        const swap = _nums[j]
-        _nums[j] = _nums[j - 1]
-        _nums[j - 1] = swap
+      if (lastNum > nums[j]) {
+        const swap = nums[j]
+        nums[j] = nums[j - 1]
+        nums[j - 1] = swap
       }
-      lastNum = _nums[j]
+      lastNum = nums[j]
     }
     lastCompareIdx -= 1
   }
 
-  return _nums
+  return nums
 }
 
 // unit tests
